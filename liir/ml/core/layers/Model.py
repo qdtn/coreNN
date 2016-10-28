@@ -10,16 +10,17 @@ import theano as th
 import numpy as np
 
 from liir.ml.core.layers.Dropout import Dropout
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from optimizer.Optimizer import getOptimizer
 from utils.Data import get_minibatches_idx, numpy_floatX
 from utils.Functions import getFunction
+
 
 __author__ = 'quynhdo'
 
 class Model(object):
     def __init__(self, idx="0", input_value_type=config.floatX, prediction_type='vector',
-                 prediction_value_type=config.floatX, use_mask=False):
+                 prediction_value_type=config.floatX, use_mask=False, use_noise=False):
         '''
 
         :param idx: id of the
@@ -44,7 +45,11 @@ class Model(object):
         self.cost = None
         self.id = idx
         self.option = Option()  # options for the model
-        self.use_noise = None
+        if use_noise:
+            self.use_noise= th.shared(numpy_floatX(0.))
+        else:
+
+            self.use_noise = None
         self.use_mask = use_mask # can be set to True when working with sequences of different sizes
 
         self.input_mask = None
@@ -425,8 +430,8 @@ class Model(object):
 
 class Sequential(Model):
     def __init__(self, idx="0", input_value_type=config.floatX, prediction_type='vector',
-                 prediction_value_type=config.floatX, use_mask=False):
-        Model.__init__(self, idx, input_value_type, prediction_type, prediction_value_type, use_mask=use_mask)
+                 prediction_value_type=config.floatX, use_mask=False, use_noise=False):
+        Model.__init__(self, idx, input_value_type, prediction_type, prediction_value_type, use_mask=use_mask, use_noise=use_noise)
 
     def compile_layers(self):
         for i in range(len(self.layers)):

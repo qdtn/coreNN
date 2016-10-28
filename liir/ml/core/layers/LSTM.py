@@ -2,7 +2,7 @@ from theano import tensor
 import numpy as np
 import theano as th
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers.Layer import Layer
 from utils.Data import ortho_weight, numpy_floatX
 from utils.Variant import _p

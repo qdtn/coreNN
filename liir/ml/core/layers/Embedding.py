@@ -2,7 +2,7 @@ from theano import config
 import numpy as np
 import theano as th
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers.Layer import Layer
 from utils.Variant import _p
 

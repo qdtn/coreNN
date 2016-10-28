@@ -1,22 +1,24 @@
 import pickle
 import sys
 import time
-from liir.ml.core.Option import Option
+
+from theano import tensor
+import theano as th
+import numpy as np
+
+from liir.ml.core.options import Option
 from liir.ml.core.layers.Dense import Dense
 from liir.ml.core.layers.Dropout import Dropout
 from liir.ml.core.layers.Embedding import Embedding
 from liir.ml.core.layers.LSTM import LSTM
-
 from liir.ml.core.layers.Model import Sequential
 from liir.ml.core.layers.Repeat import Repeat
 from liir.ml.core.layers.Reverse import Reverse
 from liir.ml.core.layers.TimeDistributed import TimeDitributed
 from optimizer.Optimizer2 import getOptimizer
-from theano import tensor
 from utils.Data import get_minibatches_idx
 from utils.Functions import getFunction
-import theano as th
-import numpy as np
+
 __author__ = 'quynhdo'
 
 # sequence to sequence model

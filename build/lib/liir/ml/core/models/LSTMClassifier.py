@@ -1,7 +1,7 @@
 from liir.ml.core.layers.TimeDistributed import TimeDitributed
 
 __author__ = 'quynhdo'
-from liir.ml.core.Option                                                                                                                                                                                                                                                                                                                                                                                                                                                          import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers.Dense import Dense
 from liir.ml.core.layers.Embedding import Embedding
 from liir.ml.core.layers.LSTM import LSTM

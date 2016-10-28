@@ -1,6 +1,6 @@
 from theano.tensor.shared_randomstreams import RandomStreams
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers import Dense
 from liir.ml.core.layers.Dropout import Dropout
 from liir.ml.core.layers.Embedding import Embedding

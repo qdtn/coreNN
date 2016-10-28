@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 
 
 __author__ = 'quynhdo'

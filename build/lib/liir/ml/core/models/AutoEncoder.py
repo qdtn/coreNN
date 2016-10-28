@@ -1,7 +1,7 @@
 __author__ = 'quynhdo'
 import numpy as np
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers import Dense
 from liir.ml.core.layers.Input import Input, NoisyInput
 from liir.ml.core.layers.Model import Sequential

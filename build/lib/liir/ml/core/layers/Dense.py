@@ -1,7 +1,7 @@
 import theano as th
 import numpy as np
 
-from liir.ml.core.Option import Option
+from liir.ml.core.options.Option import Option
 from liir.ml.core.layers.Layer import Layer
 from utils.Functions import WeightInit, getFunction
 from utils.Variant import _p
